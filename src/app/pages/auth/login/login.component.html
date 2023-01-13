@@ -1,0 +1,27 @@
+
+<div class="container">
+    <h1>Login</h1>
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input placeholder="email" matInput type="text" formControlName="email">
+        <mat-error *ngIf="email?.hasError('required')">Email is required</mat-error>
+        <mat-error *ngIf="email?.hasError('email')">Email format is incorrect</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input placeholder="password" matInput type="password" formControlName="password">
+        <mat-error *ngIf="password?.hasError('required')">Password is required</mat-error>
+        <mat-error *ngIf="password?.hasError('minlength')">Password must be at least 8 characters</mat-error>
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="Primary" [disabled]="form.invalid">Login</button>
+
+    <h4>If you aren't an admin you can't login.</h4>
+    <p>To register as new admin please <button mat-raised-button [routerLink]="['/auth/register']">CLICK HERE</button>
+    </p>
+
+</form>
+</div>

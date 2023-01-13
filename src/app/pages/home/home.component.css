@@ -1,0 +1,25 @@
+.mainContainer{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 2%;
+}
+
+mat-card{
+    margin: 3%;
+    max-height: 20%;
+    max-width: 20%; 
+}
+
+img{
+    width: 70%;
+    height: 70%;
+}
+
+.welcomeImg{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,27 @@
+.container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2%;
+}
+
+mat-card-subtitle{
+    color: black;
+    margin-top: 7%;
+    font-size: large;
+}
+
+mat-card{
+        background-color: #FFF6BF;
+        padding: 1%;
+}
+
+button{
+    left: 44%;
+}
+
+mat-card:nth-child(even){
+    right: -90%;
+
+}

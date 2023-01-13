@@ -1,0 +1,15 @@
+<div class="welcomeImg">
+    <img src="/assets/26507.jpg" alt="image">
+</div>
+<div class="mainContainer">
+<mat-card *ngFor="let startup of startups">
+    <mat-card-content >
+        <img mat-card-image src="{{startup.logo}}" alt="logo"/>
+    </mat-card-content>
+
+    <mat-card-content>
+       <h2> {{startup.companyName}} </h2>
+    </mat-card-content>
+
+</mat-card>
+</div>

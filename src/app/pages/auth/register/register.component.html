@@ -1,0 +1,43 @@
+
+<div class="container">
+    <h1>Register</h1>
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input placeholder="name" matInput type="text" formControlName="name">
+        <mat-error *ngIf="name?.hasError('required')">Name is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Phone number</mat-label>
+        <input placeholder="07xxxxxxxx" matInput type="tel" formControlName="phone">
+        <mat-error *ngIf="phone?.hasError('minlength')">Phone number must be 10 numbers</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input placeholder="example@admin.com" matInput type="email" formControlName="email">
+        <mat-error *ngIf="email?.hasError('required')">Email is required</mat-error>
+        <mat-error *ngIf="email?.hasError('email')">Email format is incorrect</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input placeholder="password" matInput type="password" formControlName="password">
+        <mat-error *ngIf="password?.hasError('required')">Password is required</mat-error>
+        <mat-error *ngIf="password?.hasError('minlength')">Password must be at least 8 characters</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Confirm Password</mat-label>
+        <input placeholder="ConfirmPassword" matInput type="password" formControlName="confirmPassword">
+        <mat-error *ngIf="confirmPassword?.hasError('required')">Password is required</mat-error>
+    </mat-form-field>
+
+    <small *ngIf="form?.hasError('passwordDosentMatch')">Confirm password dosn't match entered password</small>
+
+    <button type="submit" mat-raised-button color="Primary" [disabled]="form.invalid">Register</button>
+
+</form>
+</div>

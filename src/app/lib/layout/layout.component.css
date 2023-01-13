@@ -1,0 +1,22 @@
+* {
+    margin: 0%;
+    list-style-type: none;
+    padding-top: 0.3%;
+}
+
+nav {
+    background-color: lightgray;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-end;
+    justify-content: space-between;
+}
+
+h2 {
+    font-family: cursive;
+}
+

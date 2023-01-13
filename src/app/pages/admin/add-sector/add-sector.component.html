@@ -1,0 +1,17 @@
+
+<div class="container">
+  <h1>Add Sector</h1>
+    <form [formGroup]="form" >
+  <div mat-dialog-content >
+    
+  <mat-form-field appearance="outline" class="inputField">
+      <mat-label>Sector</mat-label>
+      <input type="text" placeholder="add Sector" matInput formControlName="sector" >
+  </mat-form-field>
+  
+  </div>
+  </form>
+  <button mat-stroked-button (click)="submit()">add</button>
+  <button mat-stroked-button (click)="closeTheDialogue()">close</button>
+  </div>
+  
