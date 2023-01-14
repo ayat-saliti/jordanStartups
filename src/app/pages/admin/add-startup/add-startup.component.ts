@@ -16,7 +16,7 @@ export class AddStartupComponent implements OnInit{
   sectors!: sector[];
   downloadUrl?: string;
   form = this.fb.group({
-    // sector: [''],
+
     companyName: ['', Validators.required],
     phone: ['', Validators.minLength(10)],
     yearOfEstablishment: [''],
@@ -61,8 +61,10 @@ submit(){
     // this.email?.value + '',
     // this.comment?.value + ''
   
-  )
-  window.location.reload();
+  ).subscribe(_=> window.location.reload())
+ 
+  // this.router.navigate(['/admin'])
+
 }
 
 
@@ -73,7 +75,7 @@ submit(){
     if (file) {
       this.storage.uploadimage(file).subscribe((value) => {
         this.downloadUrl = value;
-  
+        console.log(this.downloadUrl)
       });
     }
   }

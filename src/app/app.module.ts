@@ -13,11 +13,13 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
-import { LayoutComponent } from './lib/layout/layout.component';
+import { LayoutComponent } from './lib/layout/user-layout/layout.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AscendingOrderPipe } from './lib/customPipes/ascending-order.pipe';
+import { AdminLayoutComponent } from './lib/layout/admin-layout/admin-layout.component';
 
 
 
@@ -26,9 +28,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     HomeComponent,
-    LayoutComponent,
     ContactUsComponent ,
     AboutUsComponent,
+    AscendingOrderPipe,
+    AdminLayoutComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +46,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     
 
+  ],
+  exports: [
+    AdminLayoutComponent
   ],
   
   providers: [],

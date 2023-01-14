@@ -10,6 +10,8 @@ mat-card{
     margin: 3%;
     max-height: 20%;
     max-width: 20%; 
+    border-radius: 20%;
+    background-color: #f3cc73;
 }
 
 img{
@@ -18,8 +20,9 @@ img{
 }
 
 .welcomeImg{
-    width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 0;
+
+        background: url(/assets/26507.jpg) no-repeat;
+        background-size: cover;
+        background-position: center center;
+    
 }

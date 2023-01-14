@@ -14,43 +14,44 @@
                 <mat-label>Sector</mat-label>
                 <mat-select name="sector">
 
-
-            <mat-option *ngFor="let sector of sectors" [value]="sector.sector" (click)="addingSector(sector.sector)" >
-            {{sector.sector}}
-          </mat-option>
-        </mat-select>
-  </mat-form-field>
-</div>
-
-    <mat-form-field>
-        <mat-label>year Of Establishment</mat-label>
-        <input placeholder=" year of Establishment" matInput type="email" formControlName="yearOfEstablishment">
+                    <!-- | ascendingOrder: 'sector' -->
+                    <mat-option *ngFor="let sector of sectors  " [value]="sector.sector"
+                        (click)="addingSector(sector.sector)">
+                        {{sector.sector}}
+                    </mat-option>
+                </mat-select>
             </mat-form-field>
+        </div>
 
-            <mat-form-field>
-                <mat-label>Website</mat-label>
-                <input placeholder="Website" matInput type="text" formControlName="website">
-                <mat-error *ngIf="website?.hasError('required')">Website is required</mat-error>
-            </mat-form-field>
+        <mat-form-field>
+            <mat-label>year Of Establishment</mat-label>
+            <input placeholder=" year of Establishment" matInput type="number" formControlName="yearOfEstablishment">
+        </mat-form-field>
 
-            <mat-form-field>
-                <mat-label>Email</mat-label>
-                <input placeholder="Email address" matInput type="email" formControlName="email">
-                <mat-error *ngIf="email?.hasError('required')">Email is required</mat-error>
-                <mat-error *ngIf="email?.hasError('email')">Email format is wrong</mat-error>
-            </mat-form-field>
+        <mat-form-field>
+            <mat-label>Website</mat-label>
+            <input placeholder="Website" matInput type="text" formControlName="website">
+            <mat-error *ngIf="website?.hasError('required')">Website is required</mat-error>
+        </mat-form-field>
 
-            <mat-form-field>
-                <mat-label>Phone number</mat-label>
-                <input placeholder="07xxxxxxxx" matInput type="tel" formControlName="phone">
-                <mat-error *ngIf="phone?.hasError('minLength(10)')">Phone number must be at least 10 numbers</mat-error>
-            </mat-form-field>
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input placeholder="Email address" matInput type="email" formControlName="email">
+            <mat-error *ngIf="email?.hasError('required')">Email is required</mat-error>
+            <mat-error *ngIf="email?.hasError('email')">Email format is wrong</mat-error>
+        </mat-form-field>
 
-            <label>Logo Image</label>
+        <mat-form-field>
+            <mat-label>Phone number</mat-label>
+            <input placeholder="07xxxxxxxx" matInput type="tel" formControlName="phone">
+            <mat-error *ngIf="phone?.hasError('minLength(10)')">Phone number must be at least 10 numbers</mat-error>
+        </mat-form-field>
 
-            <input placeholder="Add logo" type="file" accept="image/*" (change)="upload($event)" required>
-            <img *ngIf="downloadUrl" title="upload" [src]='downloadUrl' width="100px">
-            <mat-error *ngIf="!downloadUrl">Image Url is required</mat-error>
-            <button (click)="submit()" mat-raised-button color="Primary" [disabled]="form.invalid">Submit</button>
+        <label>Logo Image</label>
+
+        <input placeholder="Add logo" type="file" accept="image/*" (change)="upload($event)" required>
+        <img *ngIf="downloadUrl" title="upload" [src]='downloadUrl' width="100px">
+        <mat-error *ngIf="!downloadUrl">Image Url is required</mat-error>
+        <button (click)="submit()" mat-raised-button color="Primary" [disabled]="form.invalid">Submit</button>
     </form>
 </div>

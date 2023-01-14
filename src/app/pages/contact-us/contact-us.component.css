@@ -1,10 +1,34 @@
-.container {
-    width: 50%;
+.mainContainer {
+    margin: 5%;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    min-height: 70%;
+    border-radius: 50%;
+
+}
+
+.container1 {
+    background-color: lightblue;
+    margin: 0 auto;
+    width: max-content;
+    border-radius: 10%;
+    padding: 2%;
+}
+
+
+.container2 {
+    width: 35%;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    margin-top: 3%;
 }
-.container > form > * {
+
+span {
+    margin: 0 2%;
+
+}
+
+.container2>form>* {
     width: 100%;
 }

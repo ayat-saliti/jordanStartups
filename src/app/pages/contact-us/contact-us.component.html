@@ -1,34 +1,48 @@
+<div class="mainContainer">
+    <div class="container1">
+        <pre><h2><b>Phone number:   </b><a href="tel:+962797329470">+962797329470</a></h2></pre>
 
-<div class="container">
-    <h1>If you have any note please contact us here</h1>
-    <form [formGroup]="form">
+        <pre><h2><b>E-mail:  </b><a href="mailto:ayat_slaity@yahoo.com">E-mail/ayat-saliti</a></h2></pre>
 
-    <mat-form-field>
-        <mat-label>Name</mat-label>
-        <input placeholder="name" matInput type="text" formControlName="name">
-    </mat-form-field>
+        <pre><h2><b>LinkedIn:  </b><a href="https://linkedin.com/in/ayat-slaity">LinkedIn/ayat-saliti</a></h2></pre>
 
-    <mat-form-field>
-        <mat-label>Phone number</mat-label>
-        <input placeholder="07xxxxxxxx" matInput type="tel" formControlName="phone">
-        <mat-error *ngIf="phone?.hasError('minlength')">Phone number must be 10 numbers</mat-error>
-    </mat-form-field>
+        <pre><h2><b>GitHub:  </b><a href="https://github.com/ayat-saliti">GitHub/ayat-saliti</a></h2></pre>
 
-    <mat-form-field>
-        <mat-label>Email address*</mat-label>
-        <input placeholder="example@admin.com" matInput type="email" formControlName="email">
-        <mat-error *ngIf="email?.hasError('required')">Email is required</mat-error>
-        <mat-error *ngIf="email?.hasError('email')">Email format is incorrect</mat-error>
-    </mat-form-field>
+        <button mat-raised-button color="warn" [routerLink]="['/home']">Back to home page</button>
 
-    <mat-form-field>
-        <mat-label>Comment</mat-label>
-        <input placeholder="Input you comment here please" matInput type="textarea" formControlName="comment">
-        <mat-error *ngIf="comment?.hasError('required')">Comment is required</mat-error>
-    </mat-form-field>
+    </div>
+    <div class="container2">
+        <h1>If you have any note please contact us here</h1>
+        <form [formGroup]="form">
+            <span>
+            <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input placeholder="name" matInput type="text" formControlName="name">
+            </mat-form-field>
+        </span>
+        <span>
+            <mat-form-field>
+                <mat-label>Phone number</mat-label>
+                <input placeholder="07xxxxxxxx" matInput type="tel" formControlName="phone">
+                <mat-error *ngIf="phone?.hasError('minlength')">Phone number must be 10 numbers</mat-error>
+            </mat-form-field>
+        </span>
+            <mat-form-field>
+                <mat-label>Email address</mat-label>
+                <input placeholder="example@admin.com" matInput type="email" formControlName="email">
+                <mat-error *ngIf="email?.hasError('required')">Email is required</mat-error>
+                <mat-error *ngIf="email?.hasError('email')">Email format is incorrect</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Comment</mat-label>
+                <input placeholder="Input you comment here please" matInput type="textarea" formControlName="comment">
+                <mat-error *ngIf="comment?.hasError('required')">Comment is required</mat-error>
+            </mat-form-field>
 
 
-    <button (click)="submit()" mat-raised-button color="Primary" [disabled]="form.invalid">Submit</button>
+            <button (click)="submit()" mat-raised-button color="Primary" [disabled]="form.invalid">Submit</button>
 
-</form>
+        </form>
+    </div>
 </div>
