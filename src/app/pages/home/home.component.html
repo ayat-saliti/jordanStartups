@@ -1,15 +1,9 @@
-<div class="welcomeImg">
-    <img src="/assets/26507.jpg" alt="image">
+<div class="container1">
+    <div class="subContainer">
+        <h1>JORDAN STARTUPS</h1>
+    <h2>All you need to know about startups in Jordan, you will find it on one site...</h2>
+    <button mat-button [routerLink]="['/allStartups']" color="warn">LETS START</button>
 </div>
-<div class="mainContainer">
-<mat-card *ngFor="let startup of startups">
-    <mat-card-content >
-        <img mat-card-image src="{{startup.logo}}" alt="logo"/>
-    </mat-card-content>
-
-    <mat-card-content>
-       <h2> {{startup.companyName}} </h2>
-    </mat-card-content>
-
-</mat-card>
 </div>
+
+

@@ -18,7 +18,7 @@ export class AddStartupComponent implements OnInit{
   form = this.fb.group({
 
     companyName: ['', Validators.required],
-    phone: ['', Validators.minLength(10)],
+    phone: ['', Validators.minLength(9)],
     yearOfEstablishment: [''],
     email: ['', [Validators.required, Validators.email]],
     website: ['', [Validators.required]],

@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/lib/services/auth/auth.service';
 import { passwordMatchingValidator } from 'src/app/lib/validators/passwordMatchingValidator';
+import { LayoutComponent } from 'src/app/lib/layout/user-layout/layout.component';
 
 
 @Component({
@@ -11,7 +12,9 @@ import { passwordMatchingValidator } from 'src/app/lib/validators/passwordMatchi
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
+  admin : any;
   form = this.fb.group({
+    adminKey: [''],
     phone: ['', Validators.minLength(10)],
     name: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
@@ -44,8 +47,18 @@ export class RegisterComponent {
     return this.form.get('confirmPassword');
   }
 
+  get adminKey(){
+    return this.form.get('adminKey');
+  }
+
 submit(){
+  this.admin = this.adminKey?.value;
+  var x = this.form.get('adminKey');
+  if(this.admin != 'admin2468'){
   //new user registration(in firebase)
+  this.router.navigate(['register/'])
+}
+else {
   this.auth.signUp(
     this.name?.value + '',
     this.phone?.value + '',
@@ -58,6 +71,8 @@ submit(){
     }).catch((error)=> {
       console.log(error)
   });
+ 
+}
 }
 
 }

@@ -8,13 +8,13 @@
 
 mat-card-subtitle{
     color: black;
-    margin-top: 7%;
+    margin-top: 3%;
     font-size: large;
 }
 
 mat-card{
         background-color: #FFF6BF;
-        padding: 1%;
+        padding: 3%;
 }
 
 button{

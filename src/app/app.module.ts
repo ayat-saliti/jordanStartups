@@ -9,18 +9,16 @@ import { HomeComponent } from './pages/home/home.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { LayoutComponent } from './lib/layout/user-layout/layout.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
-import { Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AscendingOrderPipe } from './lib/customPipes/ascending-order.pipe';
 import { AdminLayoutComponent } from './lib/layout/admin-layout/admin-layout.component';
-
+import { AllStartupsComponent } from './pages/all-startups/all-startups.component';
+import { StartupsDetailsComponent } from './pages/startups-details/startups-details.component';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 
 
@@ -32,7 +30,10 @@ import { AdminLayoutComponent } from './lib/layout/admin-layout/admin-layout.com
     AboutUsComponent,
     AscendingOrderPipe,
     AdminLayoutComponent,
-    LayoutComponent
+    LayoutComponent,
+    AllStartupsComponent,
+    StartupsDetailsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -44,9 +45,7 @@ import { AdminLayoutComponent } from './lib/layout/admin-layout/admin-layout.com
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    
-
-  ],
+    AngularFireStorageModule  ],
   exports: [
     AdminLayoutComponent
   ],

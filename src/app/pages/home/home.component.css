@@ -1,28 +1,31 @@
-.mainContainer{
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 2%;
+.container1 {
+
+    background: url(/assets/26507.jpg) no-repeat;
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
 }
 
-mat-card{
-    margin: 3%;
-    max-height: 20%;
-    max-width: 20%; 
-    border-radius: 20%;
-    background-color: #f3cc73;
+.subContainer {
+    width: 30%;
+    position: absolute;
+    top: 30vh;
+    right: 30vw;
+    color: rgb(75, 38, 2);
 }
-
-img{
-    width: 70%;
-    height: 70%;
+h1{
+     font-family: cursive;
+    font-size:xx-large;
+    color: rgb(75, 38, 2);
 }
-
-.welcomeImg{
-
-        background: url(/assets/26507.jpg) no-repeat;
-        background-size: cover;
-        background-position: center center;
+h2 {
+    font-family: cursive;
+    font-size: x-large;
+    color: rgb(75, 38, 2);
+    padding: 3% 0;
+}
+button{
+    font-family: cursive;
     
 }

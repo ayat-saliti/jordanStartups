@@ -54,13 +54,5 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-  addSector(){
-    let dialogRef = this.dialog.open(AddSectorComponent,{
-      width: "50%",
-
-    });
-    dialogRef.afterClosed().subscribe((result)=>{
-   this.router.navigate(['/admin'])
-    })
-  }
+  
 }

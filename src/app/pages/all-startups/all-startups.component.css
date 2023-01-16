@@ -1,0 +1,27 @@
+.mainContainer{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    flex-direction: row;
+    grid-auto-rows: 30vh;
+    margin: 0 auto;
+}
+
+mat-card{
+    margin: 3%;
+    border-radius: 30% 70%;
+    background-color: #FFF6BF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    cursor: pointer;
+}
+
+img{
+    width: 30%;
+}
+
+h2{
+    font-size: large;
+}

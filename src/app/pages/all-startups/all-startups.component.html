@@ -1,0 +1,18 @@
+<app-layout></app-layout>
+
+<div class="mainContainer">
+    <mat-card *ngFor="let startup of startups" (click)="details()">
+        <mat-card-content >
+            <img mat-card-image src="{{startup.logo}}" alt="logo"/>
+        </mat-card-content>
+    
+        <mat-card-content>
+           <h2> <b>{{startup.companyName}}</b> </h2>
+        </mat-card-content>
+
+        <mat-card-content>
+            <h2>Sector: {{startup.sector}} </h2>
+         </mat-card-content>
+    
+    </mat-card>
+    </div>

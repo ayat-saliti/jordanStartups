@@ -1,6 +1,22 @@
 .example-container {
     width: 100%;
-   min-height: 100vh;
-    margin: 0;
-    border: 1px solid #555;
-  }
+   min-height: 100%;
+    margin-top: 2%;
+}
+
+.side{
+    position:sticky;
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    top: 5%;
+
+}
+
+.side>button{
+    width: 90%;
+    height: fit-content;
+    margin: 2% ;
+    padding: 5%;
+}

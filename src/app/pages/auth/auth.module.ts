@@ -8,17 +8,19 @@ import { MaterialModule } from 'src/app/lib/components/material/material.module'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
+
 @NgModule({
-  declarations: [
-    LoginComponent,
-    RegisterComponent
-  ],
-  imports: [
-    CommonModule,
-    AuthRoutingModule,
-    MaterialModule,
-    FormsModule,
-    ReactiveFormsModule 
-   ]
+    declarations: [
+        LoginComponent,
+        RegisterComponent
+    ],
+    imports: [
+        CommonModule,
+        AuthRoutingModule,
+        MaterialModule,
+        FormsModule,
+        ReactiveFormsModule,
+    
+    ]
 })
 export class AuthModule { }
