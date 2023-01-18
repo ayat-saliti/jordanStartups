@@ -5,7 +5,7 @@ export interface startup {
     founder?:string,
     logo?:string,
     numOfEmployee?:number,
-    phoneNo?:number,
+    phone?:string,
     sector?:string[],
     website?:string,
     yearOfEstablishment?:number

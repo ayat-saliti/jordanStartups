@@ -13,7 +13,9 @@ mat-card-subtitle{
 }
 
 mat-card{
-        background-color: #FFF6BF;
+   
+    text-align: center;
+        background-image: radial-gradient(circle, #FFF6BF, white) ;
         padding: 3%;
 }
 

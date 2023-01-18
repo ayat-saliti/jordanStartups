@@ -22,7 +22,9 @@ export class AllStartupsComponent {
      });
    }
 
-   details(){
-    this.router.navigate(['details/'])
+   details(id: string | undefined){
+    this.router.navigate(['details/',id])
    }
+
+   
 }

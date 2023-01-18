@@ -34,4 +34,10 @@ export class StartupServiceService {
     let addSector = this.sectorCollection?.add(sector);
     return from(addSector);
   }
+  getStartupById(id: string){
+    return this.startupCollection.doc(id).valueChanges();
+  }
+  updateStartup(id: string, startup: startup){
+    return from(this.startupCollection.doc(id).update({ ...startup }));
+  }
 }

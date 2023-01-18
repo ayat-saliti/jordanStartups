@@ -26,7 +26,7 @@ const routes: Routes = [
     {path:'contact-us', component: ContactUsComponent},
     {path:'home', component: HomeComponent},
     {path: 'allStartups', component: AllStartupsComponent},
-    {path: 'details' , component: StartupsDetailsComponent}
+    {path: 'details/:id' , component: StartupsDetailsComponent}
 
 
 ];

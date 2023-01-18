@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
-import { Router } from '@angular/router';
-import { map } from 'rxjs';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable, switchMap } from 'rxjs';
 import { startup } from 'src/app/lib/interface/startup';
+import { StartupServiceService } from 'src/app/lib/services/startup-service.service';
 
 
 @Component({
@@ -11,38 +11,36 @@ import { startup } from 'src/app/lib/interface/startup';
   styleUrls: ['./startups-details.component.css']
 })
 export class StartupsDetailsComponent {
-  startupCollection!: AngularFirestoreCollection<startup>;
-  readonly items$ = this.firestore.collection('items').valueChanges({ idField: 'id'});
-  constructor(private firestore: AngularFirestore, private router:Router) { }
+  startup$!: Observable<startup | undefined>;
+  startup?: startup;
+  id!: string;
+  constructor(private route: ActivatedRoute, private router: Router, private startupService: StartupServiceService) {
+
+    this.startup$ = this.route.paramMap.pipe(
+      switchMap((value) => {
+        this.id = value.get('id') + '';
+        return this.startupService.getStartupById(this.id);
+      })
+    );
+
+
+    this.startup$.subscribe((value) => {
+      this.startup = value;
+    });
+
+
+  }
   ngOnInit(): void {
-    // this.getStartupByID();
+    this.getStartupByID();
+
   }
 
 
-  // getStartupByID() {
-    // readonly items$ = collectionChanges(
-    //   collection(this.firestore, 'items')
-    // ).pipe(
-    //   map((items) =>
-    //     items.map((item) => {
-    //       const data = item.doc.data();
-    //       const id = `idprefix-${item.doc.id}`;
-    //       return { id, ...data };
-    //     })
-    //   )
-    // );
-    
-    
-// return this.startupCollection.snapshotChanges().pipe(
-//   map(obj => {       
-//   return obj.map(a => {
-//     const startup = a.payload.doc.data() as startup;
-//     startup.id = a.payload.doc.id;
-//     return startup;
-    
-//   })}
-//     ))
-//       }
+  getStartupByID() {
+    this.startup$.subscribe((value) => {
+      this.startup = value;
+    });
+  }
 
 
 }

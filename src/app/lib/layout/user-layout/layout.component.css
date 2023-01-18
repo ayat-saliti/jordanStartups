@@ -4,11 +4,14 @@
 }
 
 nav {
-    background-color:#fffdce;
+    /* background-color:#fffdce; */
+    background-image: linear-gradient(#fffdce, white);
     display: flex;
     flex-direction: row;
     justify-items: flex-end;
     justify-content: space-between;
+    /* border: 1px solid black; */
+    height: 20vh;
 }
 
 div{

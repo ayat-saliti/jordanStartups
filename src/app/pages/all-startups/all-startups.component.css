@@ -1,27 +1,31 @@
 .mainContainer{
     width: 80%;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(4,1fr);
     flex-direction: row;
-    grid-auto-rows: 30vh;
+    grid-auto-rows: 35vh;
     margin: 0 auto;
 }
-
+/* //#FFF6BF */
 mat-card{
     margin: 3%;
     border-radius: 30% 70%;
-    background-color: #FFF6BF;
+    /* background-color: white; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;  
     cursor: pointer;
+    margin-top: 10vh;
+    background-image: linear-gradient(to top right, #fffc97, white);
 }
+/* #fffdce */
+
 
 img{
     width: 30%;
 }
 
 h2{
-    font-size: large;
+    text-align: center;
 }

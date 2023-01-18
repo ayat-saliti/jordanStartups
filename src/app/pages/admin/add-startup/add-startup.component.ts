@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { contact } from 'src/app/lib/interface/contactUs';
 import { sector } from 'src/app/lib/interface/sector';
+import { startup } from 'src/app/lib/interface/startup';
 import { FireStorageService } from 'src/app/lib/services/fire-storage.service';
 import { StartupServiceService } from 'src/app/lib/services/startup-service.service';
 
@@ -54,7 +54,7 @@ submit(){
   //new comment(in firebase)
   this.auth.addStartup({ 
     ...this.form.value,logo:this.downloadUrl,sector:this.sector
-  } as contact
+  } as startup
     
     // this.name?.value + '',
     // this.phone?.value + '',
