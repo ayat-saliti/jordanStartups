@@ -22,7 +22,7 @@ export class EditStartupComponent {
   sectors!: sector[];
   downloadUrl?: string;
   form = this.fb.group({
-
+    about: [''],
     companyName: ['' , Validators.required],
     phone: new FormControl<string> ('', [Validators.minLength(9)]),
     yearOfEstablishment: [''],
@@ -46,11 +46,12 @@ export class EditStartupComponent {
   this.form.controls.companyName.setValue(value?.companyName + '');
       
       this.form.controls.phone.setValue(value?.phone + '');
+      this.form.controls.about.setValue(value?.about + '');
       this.form.controls.yearOfEstablishment.setValue(value?.yearOfEstablishment + '');
       this.form.controls.email.setValue(value?.email + '');
       this.form.controls.website.setValue(value?.website+ '');
       this.startup = value;
-      console.log(value)
+
     
   });
 

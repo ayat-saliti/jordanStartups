@@ -18,4 +18,16 @@ table {
   img{
     width: 70px;
   }
+
+  .about{
+    max-height: 10vh; 
+    display: flex;
+    overflow:auto;
+}
+
+
+
+
+
   
+

@@ -20,10 +20,11 @@ img{
     max-width: 25vw;
 }
 
-.container2{
+.container2, .container1{
    display: flex;
    flex-direction: column;
    align-items: center;
+
 }
 
 button{

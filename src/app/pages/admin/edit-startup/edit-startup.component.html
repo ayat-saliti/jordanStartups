@@ -23,6 +23,11 @@
             </mat-form-field>
         </div>
 
+        <mat-form-field >
+            <mat-label>About</mat-label>
+            <input placeholder="About" matInput type="text" formControlName="about">
+        </mat-form-field>
+
         <mat-form-field>
             <mat-label>year Of Establishment</mat-label>
             <input placeholder=" year of Establishment" matInput type="number" formControlName="yearOfEstablishment">
@@ -49,10 +54,10 @@
 
         <label>Logo Image</label>
         
-        <input placeholder="Add logo" type="file" accept="image/*" (change)="upload($event)" required>
+        <input placeholder="Add logo" type="file" accept="image/*" (change)="upload($event)" >
         <img *ngIf="startup?.logo" [src]="startup?.logo" alt="" [class.hide]="hide">
         <img *ngIf="downloadUrl" title="upload" [src]='downloadUrl' width="100px">
-        <mat-error *ngIf="!downloadUrl">Image Url is required</mat-error>
+        <mat-error *ngIf="!downloadUrl"></mat-error>
 
         <button (click)="submit()" mat-raised-button color="Primary" [disabled]="form.invalid">Update</button>
     </form>

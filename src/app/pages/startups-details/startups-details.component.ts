@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, switchMap } from 'rxjs';
 import { startup } from 'src/app/lib/interface/startup';
@@ -10,11 +10,20 @@ import { StartupServiceService } from 'src/app/lib/services/startup-service.serv
   templateUrl: './startups-details.component.html',
   styleUrls: ['./startups-details.component.css']
 })
+
 export class StartupsDetailsComponent {
+
   startup$!: Observable<startup | undefined>;
   startup?: startup;
   id!: string;
-  constructor(private route: ActivatedRoute, private router: Router, private startupService: StartupServiceService) {
+  constructor(private route: ActivatedRoute, private router: Router, private startupService: StartupServiceService) {  }
+
+  ngOnInit(): void {
+    this.getStartupByID();
+
+  }
+
+  getStartupByID() {
 
     this.startup$ = this.route.paramMap.pipe(
       switchMap((value) => {
@@ -23,24 +32,9 @@ export class StartupsDetailsComponent {
       })
     );
 
-
     this.startup$.subscribe((value) => {
       this.startup = value;
     });
 
-
   }
-  ngOnInit(): void {
-    this.getStartupByID();
-
-  }
-
-
-  getStartupByID() {
-    this.startup$.subscribe((value) => {
-      this.startup = value;
-    });
-  }
-
-
 }

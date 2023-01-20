@@ -1,9 +1,10 @@
 .mainContainer{
     width: 80%;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 7%;
     flex-direction: row;
-    grid-auto-rows: 35vh;
+    grid-auto-rows: 37vh;
     margin: 0 auto;
 }
 /* //#FFF6BF */
@@ -17,9 +18,9 @@ mat-card{
     align-items: center;  
     cursor: pointer;
     margin-top: 10vh;
-    background-image: linear-gradient(to top right, #fffc97, white);
+    background-image: linear-gradient(to top right,#c4dbf5, white, white);
 }
-/* #fffdce */
+/* ##c4dbf5 */
 
 
 img{

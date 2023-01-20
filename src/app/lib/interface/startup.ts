@@ -1,6 +1,7 @@
 export interface startup {
     id?:string,
     companyName?:string,
+    about?: string,
     email?:string,
     founder?:string,
     logo?:string,

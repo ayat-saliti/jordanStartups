@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { MediaMatcher } from '@angular/cdk/layout';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { AddSectorComponent } from 'src/app/pages/admin/add-sector/add-sector.component';
 import { User } from '../../interface/user';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-admin-layout',
@@ -10,15 +13,32 @@ import { User } from '../../interface/user';
   styleUrls: ['./admin-layout.component.css']
 })
 export class AdminLayoutComponent {
-  constructor( private dialog:MatDialog, private router:Router){}
-  addSector(){
-    let dialogRef = this.dialog.open(AddSectorComponent,{
-      width: "50%",
 
-    });
-  //   dialogRef.afterClosed().subscribe((result)=>{
 
-  //  this.router.navigate(['/admin'])
-  //   })
-  }
+   
+private _mobileQueryListener: () => void;
+mobileQuery: MediaQueryList;
+
+constructor(private changeDetectorRef: ChangeDetectorRef,
+    private media: MediaMatcher,
+    private dialog:MatDialog, private router:Router,
+    public authSevice: AuthService) {
+
+    this.mobileQuery = this.media.matchMedia('(max-width: 1000px)');
+    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    // tslint:disable-next-line: deprecation
+    this.mobileQuery.addListener(this._mobileQueryListener);
+}
+ngOnInit(): void {
+
+}
+ngAfterViewInit(): void {
+  this.changeDetectorRef.detectChanges();
+}
+addSector(){
+  let dialogRef = this.dialog.open(AddSectorComponent,{
+    width: "50%",
+
+  });
+}
 }

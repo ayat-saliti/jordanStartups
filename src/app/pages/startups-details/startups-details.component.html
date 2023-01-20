@@ -6,37 +6,45 @@
             <mat-card-content>
                 <img mat-card-image src="{{startup?.logo}}" alt="logo" />
             </mat-card-content>
-        </div>
-
-        <div class="container2">
-            <mat-card-content>
-                <h2> <b>{{startup?.companyName}}</b> </h2>
-            </mat-card-content>
 
             <mat-card-content>
                 <h2>Sector: {{startup?.sector}} </h2>
             </mat-card-content>
 
             <mat-card-content>
+                <h2> {{startup?.about}} </h2>
+            </mat-card-content>
+        </div>
+        
+
+        <div class="container2">
+            <!-- <mat-card-content>
+                <h2> <b>{{startup?.companyName}}</b> </h2>
+            </mat-card-content> -->
+
+      
+
+            <mat-card-content>
                 <h2>Year of establishment: {{startup?.yearOfEstablishment}} </h2>
             </mat-card-content>
 
             <mat-card-content>
-                <h2>Email address: {{startup?.email}} </h2>
+                <h2>Email address:  <a href="mailto:{{startup?.email}}">{{startup?.email}}</a></h2>
             </mat-card-content>
 
 
             <mat-card-content>
-                <h2>Phone number: {{startup?.phone}} </h2>
+                <pre><h2><b>Phone number:   </b><a href="tel:{{startup?.phone}}">{{startup?.phone}}</a></h2></pre>
             </mat-card-content>
 
 
             <mat-card-content>
-                <h2>web: {{startup?.website}} </h2>
+                <pre><h2><b>Company website:  </b><a href="{{startup?.website}}">{{startup?.website}}</a></h2></pre>
             </mat-card-content>
 
-        </div>
+  
 
         <button mat-raised-button color="warn" [routerLink]="['/allStartups']">Back</button>
+    </div>
     </mat-card>
 </div>

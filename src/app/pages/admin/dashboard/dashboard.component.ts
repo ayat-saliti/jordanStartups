@@ -20,6 +20,7 @@ export class DashboardComponent implements OnInit {
     'Website',
     'email',
     'phone number',
+    'about',
     'edit',
     'delete'
   ];
@@ -53,6 +54,7 @@ export class DashboardComponent implements OnInit {
       this.getStartups()
     })
   }
+
 
   
 }
