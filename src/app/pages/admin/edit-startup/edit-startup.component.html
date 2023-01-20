@@ -15,8 +15,9 @@
                 <mat-select name="sector">
 
                     <!-- | ascendingOrder: 'sector' -->
-                    <mat-option *ngFor="let sector of sectors  " [value]="startup?.sector"
-                        (click)="addingSector(sector.sector)">
+                    <!-- " [value]="startup?.sector" -->
+                    <mat-option *ngFor="let sector of sectors" [value]="startup?.sector === sector.sector"
+                        (click)="addingSector(sector.sector)" >
                         {{sector.sector}}
                     </mat-option>
                 </mat-select>
@@ -59,6 +60,6 @@
         <img *ngIf="downloadUrl" title="upload" [src]='downloadUrl' width="100px">
         <mat-error *ngIf="!downloadUrl"></mat-error>
 
-        <button (click)="submit()" mat-raised-button color="Primary" [disabled]="form.invalid">Update</button>
+        <button (click)="update()" mat-raised-button color="Primary" [disabled]="form.invalid">Update</button>
     </form>
 </div>

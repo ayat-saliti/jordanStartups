@@ -83,15 +83,13 @@ export class EditStartupComponent {
     return this.form.get('yearOfEstablishment');
   }
 
-  submit() {
+  update() {
     this.startupService.updateStartup(this.id, {
 
       ...this.form.value, logo: this.downloadUrl, sector: this.sector
     } as startup
 
     ).subscribe(_ => this.router.navigate(['admin/']))
-
-
   }
 
 
