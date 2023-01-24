@@ -1,14 +1,19 @@
 <app-layout></app-layout>
 
-<div class="mainContainer">
-    <mat-card *ngFor="let startup of startups" (click)="details(startup.id)">
+
+
+    <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"> -->
+
+<div class="mainContainer" >
+
+    <mat-card *ngFor="let startup of startups"  (click)="details(startup.id)">
         <mat-card-content >
             <img mat-card-image src="{{startup.logo}}" alt="logo"/>
         </mat-card-content>
     
-        <mat-card-content>
+        <!-- <mat-card-content>
            <h2> <b>{{startup.companyName}}</b> </h2>
-        </mat-card-content>
+        </mat-card-content> -->
     
     </mat-card>
     </div>

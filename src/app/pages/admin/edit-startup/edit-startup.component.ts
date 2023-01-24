@@ -7,6 +7,7 @@ import { startup } from 'src/app/lib/interface/startup';
 import { FireStorageService } from 'src/app/lib/services/fire-storage.service';
 import { StartupServiceService } from 'src/app/lib/services/startup-service.service';
 
+
 @Component({
   selector: 'app-edit-startup',
   templateUrl: './edit-startup.component.html',
@@ -108,14 +109,12 @@ export class EditStartupComponent {
 
   addingSector(sector: any) {
     this.sector = sector;
-   
-  }
+    }
 
   getSectors() {
     this.startupService.getSector().subscribe((response) => {
       this.sectors = response;
     });
   }
-
 
 }

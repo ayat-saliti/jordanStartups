@@ -1,50 +1,49 @@
 <app-layout></app-layout>
 
 <div class="mainContainer">
-    <mat-card>
-        <div class="container1">
+
+    
+        <mat-card class="container2">
             <mat-card-content>
                 <img mat-card-image src="{{startup?.logo}}" alt="logo" />
             </mat-card-content>
 
+            <br>
             <mat-card-content>
-                <h2>Sector: {{startup?.sector}} </h2>
+                <h2 class="about"> {{startup?.about}} </h2>
+            </mat-card-content>
+
+        </mat-card>
+    
+
+
+
+        <mat-card class="container1">
+            <mat-card-content>
+                <pre>  <h2> <b>COMPANY NAME:     {{startup?.companyName}}</b> </h2></pre>
             </mat-card-content>
 
             <mat-card-content>
-                <h2> {{startup?.about}} </h2>
-            </mat-card-content>
-        </div>
-        
-
-        <div class="container2">
-            <!-- <mat-card-content>
-                <h2> <b>{{startup?.companyName}}</b> </h2>
-            </mat-card-content> -->
-
-      
-
-            <mat-card-content>
-                <h2>Year of establishment: {{startup?.yearOfEstablishment}} </h2>
+                <pre><h2>SECTOR:    {{startup?.sector}} </h2></pre>
             </mat-card-content>
 
             <mat-card-content>
-                <h2>Email address:  <a href="mailto:{{startup?.email}}">{{startup?.email}}</a></h2>
+                <pre><h2>YEAR OF ESTABLESHMENT:    {{startup?.yearOfEstablishment}} </h2></pre>
             </mat-card-content>
-
 
             <mat-card-content>
-                <pre><h2><b>Phone number:   </b><a href="tel:{{startup?.phone}}">{{startup?.phone}}</a></h2></pre>
+                <pre><h2>PHONE NUMBER:       <a href="tel:{{startup?.phone}}">{{startup?.phone}}</a></h2></pre>
             </mat-card-content>
-
 
             <mat-card-content>
-                <pre><h2><b>Company website:  </b><a href="{{startup?.website}}">{{startup?.website}}</a></h2></pre>
+                <pre> <h2>EMAIL ADDRESS     <a href="mailto:{{startup?.email}}">{{startup?.email}}</a></h2></pre>
             </mat-card-content>
 
-  
+            <mat-card-content>
+                <pre><h2>COMPANY WEBSITE:      <a href="{{startup?.website}}">{{startup?.website}}</a></h2></pre>
+            </mat-card-content>
 
-        <button mat-raised-button color="warn" [routerLink]="['/allStartups']">Back</button>
-    </div>
-    </mat-card>
+        </mat-card>
+ 
 </div>
+<button mat-raised-button color="warn" [routerLink]="['/allStartups']">BACK</button>

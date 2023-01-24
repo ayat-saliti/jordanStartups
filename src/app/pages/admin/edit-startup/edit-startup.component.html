@@ -1,6 +1,7 @@
-<div class="container">
-    <h1>Edit startup</h1>
-    <form [formGroup]="form">
+
+  
+    <form [formGroup]="form" class="container">
+        <h1>Edit startup</h1>
 
         <mat-form-field>
             <mat-label>Company name</mat-label>
@@ -9,16 +10,15 @@
         </mat-form-field>
 
         <div>
-
             <mat-form-field appearance="fill">
                 <mat-label>Sector</mat-label>
                 <mat-select name="sector">
 
                     <!-- | ascendingOrder: 'sector' -->
-                    <!-- " [value]="startup?.sector" -->
-                    <mat-option *ngFor="let sector of sectors" [value]="startup?.sector === sector.sector"
-                        (click)="addingSector(sector.sector)" >
+                    <mat-option *ngFor="let sector of sectors " [value]="startup?.sector"
+                        (click)="addingSector(sector.sector)">
                         {{sector.sector}}
+                        
                     </mat-option>
                 </mat-select>
             </mat-form-field>
@@ -53,6 +53,8 @@
             <mat-error *ngIf="phone?.hasError('minLength(10)')">Phone number must be at least 10 numbers</mat-error>
         </mat-form-field>
 
+        
+        <div class="subCont">
         <label>Logo Image</label>
         
         <input placeholder="Add logo" type="file" accept="image/*" (change)="upload($event)" >
@@ -61,5 +63,6 @@
         <mat-error *ngIf="!downloadUrl"></mat-error>
 
         <button (click)="update()" mat-raised-button color="Primary" [disabled]="form.invalid">Update</button>
+   
+    </div>
     </form>
-</div>

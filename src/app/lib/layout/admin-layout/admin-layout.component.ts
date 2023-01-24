@@ -15,7 +15,6 @@ import { AuthService } from '../../services/auth/auth.service';
 export class AdminLayoutComponent {
 
 
-   
 private _mobileQueryListener: () => void;
 mobileQuery: MediaQueryList;
 

@@ -6,6 +6,7 @@ import { AddStartupComponent } from './add-startup/add-startup.component';
 import { AdminLayoutComponent } from 'src/app/lib/layout/admin-layout/admin-layout.component';
 import { EditStartupComponent } from './edit-startup/edit-startup.component';
 
+
 const routes: Routes =[
   {path:'', component: DashboardComponent, pathMatch: 'full'},
   {path:'addStartup',component:AddStartupComponent},

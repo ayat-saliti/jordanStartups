@@ -1,7 +1,9 @@
 
 table {
-    width: 100%;
-    min-height: 100%;
+    width: 80vw;
+    height: 70vh;
+    margin-right: 10%;
+    margin-bottom: 10%;
   }
   
   .mat-mdc-form-field {
