@@ -16,7 +16,11 @@ export class StartupsDetailsComponent {
   startup$!: Observable<startup | undefined>;
   startup?: startup;
   id!: string;
-  constructor(private route: ActivatedRoute, private router: Router, private startupService: StartupServiceService) {  }
+
+  constructor(
+    private route: ActivatedRoute,
+    private startupService: StartupServiceService
+    ) {}
 
   ngOnInit(): void {
     this.getStartupByID();

@@ -19,6 +19,7 @@ import { AdminLayoutComponent } from './lib/layout/admin-layout/admin-layout.com
 import { AllStartupsComponent } from './pages/all-startups/all-startups.component';
 import { StartupsDetailsComponent } from './pages/startups-details/startups-details.component';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 
 
@@ -33,6 +34,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     LayoutComponent,
     AllStartupsComponent,
     StartupsDetailsComponent,
+    PageNotFoundComponent,
 
   ],
   imports: [

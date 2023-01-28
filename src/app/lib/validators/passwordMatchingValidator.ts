@@ -4,7 +4,7 @@ export const passwordMatchingValidator :ValidatorFn = (control) => {
     const password = control.get('password')?.value;
     const confirm = control.get('confirmPassword')?.value;
 
-    // check if invalid(we have paswword and confirmPassword but not equal)
+    // check if invalid(we have password and confirmPassword but not equal)
     if(password && confirm && password !== confirm){
         return {
             passwordDoesntMatch: true

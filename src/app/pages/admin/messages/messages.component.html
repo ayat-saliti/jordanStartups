@@ -1,0 +1,13 @@
+<div class="container1">
+
+<div class="mainContainer" >
+
+    <mat-card *ngFor="let comment of comments"  (click)="showMessage(comment.id)">
+
+        <mat-card-content>
+           <h2> <b>{{comment.name}}</b> </h2>
+        </mat-card-content>
+    
+    </mat-card>
+    </div>
+</div>

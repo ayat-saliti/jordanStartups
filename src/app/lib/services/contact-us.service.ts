@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { from, Observable } from 'rxjs';
 import { contact } from '../interface/contactUs';
-import { startup } from '../interface/startup';
+
 
 @Injectable({
   providedIn: 'root'
@@ -22,4 +22,12 @@ export class ContactUsService {
     return from(addedComment)
   }
 
+ 
+  getcommentById(id: string){
+    return this.contactUsCollection.doc(id).valueChanges();
+  }
+
+  deleteMessage(id:string) {
+    return from(this.fs.collection('contactUs').doc(id).delete());
+  }
 }

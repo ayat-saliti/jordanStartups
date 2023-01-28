@@ -2,29 +2,34 @@
     width: 50%;
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
     gap: 2rem;
     padding: 2%;
+    background: url(/assets/backgroundd.jpg) no-repeat;
+    width: 90%;
+    height: 81vh;
+    background-size: cover;
+    /* background-position: center center; */
 }
 
-mat-card-subtitle{
+.paragraph{
     color: black;
-    margin-top: 3%;
+    margin-top: 7%;
     font-size: large;
+    width: 35%;
+    text-align: center;
+
 }
 
-mat-card{
-   
-    text-align: center;
-        background-image: radial-gradient(circle,#c4dbf5, white) ;
-        padding: 3%;
-        border-radius: 40%;
-}
+
+
 
 button{
-    left: 44%;
+    right: 10%;
+    margin-top: 5%;
 }
 
 mat-card:nth-child(even){
-    right: -90%;
+   width: 35%
 
 }

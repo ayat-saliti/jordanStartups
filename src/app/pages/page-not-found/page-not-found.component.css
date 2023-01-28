@@ -1,0 +1,11 @@
+.container{
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 35%;
+    left: 35%;
+}
+
+h1, h2{
+    font-size: xx-large;
+}

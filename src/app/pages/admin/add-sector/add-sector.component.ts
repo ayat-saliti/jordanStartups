@@ -26,10 +26,8 @@ export class AddSectorComponent {
 
   submit() {
     //  add Sector
-    this.sectorService
-      .addSector({ ...this.form.value } as sector)
+    this.sectorService.addSector({ ...this.form.value } as sector)
       .subscribe((_) => {
-      
         this.dialogRef.close(true);
       });
   }

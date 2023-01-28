@@ -49,7 +49,7 @@ submit(){
     // this.email?.value + '',
     // this.comment?.value + ''
   
-  )
-  console.log("hello from submit")
+  ).subscribe(_ => window.location.reload())
+
 }
 }

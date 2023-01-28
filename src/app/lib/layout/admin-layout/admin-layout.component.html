@@ -17,7 +17,7 @@
         [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" class="sidenav">
   
         <mat-nav-list>
-          <h3 mat-subheader>Welcome </h3>
+          <h2 mat-subheader *ngFor="let user of userName"> WELCOME {{user.name | uppercase}}</h2>
   
           <a mat-list-item class="mat-list-item-container" [routerLink]="['addStartup']" routerLinkActive="active" >
             <div class="menu-element">
@@ -28,6 +28,12 @@
           <a mat-list-item class="mat-list-item-container" (click)="addSector()" routerLinkActive="active" >
             <div class="menu-element">
                   <p mat-line> Add new sector </p>
+            </div>
+          </a>
+
+          <a mat-list-item class="mat-list-item-container" [routerLink]="['messages']" routerLinkActive="active" >
+            <div class="menu-element">
+                  <p mat-line> Users messages </p>
             </div>
           </a>
 

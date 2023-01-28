@@ -12,8 +12,8 @@ import { StartupServiceService } from 'src/app/lib/services/startup-service.serv
   templateUrl: './add-startup.component.html',
   styleUrls: ['./add-startup.component.css']
 })
-export class AddStartupComponent implements OnInit{
-  sector?:string;
+export class AddStartupComponent implements OnInit {
+  sector?: string;
   sectors!: sector[];
   downloadUrl?: string;
   form = this.fb.group({
@@ -23,73 +23,71 @@ export class AddStartupComponent implements OnInit{
     yearOfEstablishment: [''],
     email: ['', [Validators.required, Validators.email]],
     website: ['', [Validators.required]],
-  }); 
+  });
 
-  constructor(private fb: FormBuilder, private auth: StartupServiceService, private router:Router,private storage: FireStorageService){
+  constructor(private fb: FormBuilder, private auth: StartupServiceService, private router: Router, private storage: FireStorageService) {
 
   }
   ngOnInit(): void {
     this.getSectors();
   }
 
-  get companyName(){
+  get companyName() {
     return this.form.get('companyName');
   }
 
-  get phone(){
+  get phone() {
     return this.form.get('phone');
   }
 
-  get email(){
+  get email() {
     return this.form.get('email');
   }
 
-  get website(){
+  get website() {
     return this.form.get('website');
   }
 
-  get yearOfEstablishment(){
+  get yearOfEstablishment() {
     return this.form.get('yearOfEstablishment');
   }
-submit(){
-  //new comment(in firebase)
-  this.auth.addStartup({ 
-    ...this.form.value,logo:this.downloadUrl,sector:this.sector
-  } as startup
-    
-    // this.name?.value + '',
-    // this.phone?.value + '',
-    // this.email?.value + '',
-    // this.comment?.value + ''
-  
-  ).subscribe(_=> window.location.reload())
- 
-  // this.router.navigate(['/admin'])
+  submit() {
+    //new comment(in firebase)
+    this.auth.addStartup({
+      ...this.form.value, logo: this.downloadUrl, sector: this.sector
+    } as startup
 
-}
+      // this.name?.value + '',
+      // this.phone?.value + '',
+      // this.email?.value + '',
+      // this.comment?.value + ''
+
+    ).subscribe(_ => window.location.reload())
+
+    // this.router.navigate(['/admin'])
+
+  }
 
 
- 
- upload(event: Event) {
-  
+
+  upload(event: Event) {
+
     let file = (event.target as HTMLInputElement)?.files?.[0];
     if (file) {
       this.storage.uploadimage(file).subscribe((value) => {
         this.downloadUrl = value;
-        console.log(this.downloadUrl)
       });
     }
   }
 
-  addingSector(sector:any){
-this.sector=sector;
-console.log(this.sector)
+  addingSector(sector: any) {
+    this.sector = sector;
   }
 
- getSectors() {
+  getSectors() {
     this.auth.getSector().subscribe((response) => {
       this.sectors = response;
     });
   }
-  
+
 }

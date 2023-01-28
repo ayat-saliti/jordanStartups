@@ -1,0 +1,25 @@
+
+
+.buttons{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin: 2%;
+}
+
+button{
+    margin:0 5%;
+}
+
+.reply{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10% 0;
+}
+
+.comment{
+    margin: 10% 0;
+}
+

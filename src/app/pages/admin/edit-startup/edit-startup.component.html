@@ -12,14 +12,22 @@
         <div>
             <mat-form-field appearance="fill">
                 <mat-label>Sector</mat-label>
-                <mat-select name="sector">
 
-                    <!-- | ascendingOrder: 'sector' -->
-                    <mat-option *ngFor="let sector of sectors " [value]="startup?.sector"
-                        (click)="addingSector(sector.sector)">
+                <!-- <mat-select class="selectSector" formControlName="sector" >
+                    <mat-option [value]="startup?.sector"></mat-option>
+                     <mat-option *ngFor="let sector of sectors"  selected="startup?.sector" >
+                     {{sector.sector}}
+                    </mat-option>
+                 </mat-select> -->
+
+
+                <mat-select name="sector" formControlName="sector" >                
+                     <mat-option *ngFor="let sector of sectors " 
+                     (change)="selected($event)"
+                        (click)="addingSector(sector.sector)" [value] ="sector?.sector">
                         {{sector.sector}}
                         
-                    </mat-option>
+                    </mat-option> 
                 </mat-select>
             </mat-form-field>
         </div>
@@ -53,11 +61,11 @@
             <mat-error *ngIf="phone?.hasError('minLength(10)')">Phone number must be at least 10 numbers</mat-error>
         </mat-form-field>
 
-        
+
         <div class="subCont">
         <label>Logo Image</label>
         
-        <input placeholder="Add logo" type="file" accept="image/*" (change)="upload($event)" >
+        <input placeholder="Add logo" type="file" accept="image/*" (change)="upload($event)">
         <img *ngIf="startup?.logo" [src]="startup?.logo" alt="" [class.hide]="hide">
         <img *ngIf="downloadUrl" title="upload" [src]='downloadUrl' width="100px">
         <mat-error *ngIf="!downloadUrl"></mat-error>

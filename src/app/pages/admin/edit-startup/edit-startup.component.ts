@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, switchMap } from 'rxjs';
@@ -13,15 +13,17 @@ import { StartupServiceService } from 'src/app/lib/services/startup-service.serv
   templateUrl: './edit-startup.component.html',
   styleUrls: ['./edit-startup.component.css']
 })
-export class EditStartupComponent {
+export class EditStartupComponent implements OnInit {
   hide?: boolean = false;
   startup$!: Observable<startup | undefined>;
-  startup?: startup;
+  public startup?: startup;
   id!: string;
-
+  s?: string | any;
   sector?: string;
   sectors!: sector[];
   downloadUrl?: string;
+  
+
   form = this.fb.group({
     about: [''],
     companyName: ['' , Validators.required],
@@ -29,20 +31,27 @@ export class EditStartupComponent {
     yearOfEstablishment: [''],
     email: ['', [Validators.required, Validators.email]],
     website: ['', [Validators.required]],
+    sector: ['']
   });
-
+   toSelect?:any ;
 
   constructor(private fb: FormBuilder, private startupService: StartupServiceService, private router: Router, private route: ActivatedRoute, private storage: FireStorageService) {
 
-
+  }
+  ngOnInit(): void {
     this.startup$ = this.route.paramMap.pipe(
       switchMap((value) => {
         this.id = value.get('id') + '';
+      
         return this.startupService.getStartupById(this.id);
       })
     );
 
     this.startup$.subscribe((value) => {
+console.log(value);
+         this.startup = value;
+      this.s = this.startup?.sector;
+      this.form.controls.sector.setValue(this.s);
 
   this.form.controls.companyName.setValue(value?.companyName + '');
       
@@ -51,18 +60,15 @@ export class EditStartupComponent {
       this.form.controls.yearOfEstablishment.setValue(value?.yearOfEstablishment + '');
       this.form.controls.email.setValue(value?.email + '');
       this.form.controls.website.setValue(value?.website+ '');
-      this.startup = value;
-
+      this.form.controls.sector.setValue(value?.sector+'')
+   
+console.log(value?.sector)
     
   });
-
-  }
-  ngOnInit(): void {
-
-    console.log(this.startup)
-
     this.getSectors();
   }
+
+  
 
   get companyName() {
     return this.form.get('companyName');
@@ -84,16 +90,18 @@ export class EditStartupComponent {
     return this.form.get('yearOfEstablishment');
   }
 
+
+
   update() {
     this.startupService.updateStartup(this.id, {
 
-      ...this.form.value, logo: this.downloadUrl, sector: this.sector
+      ...this.form.value, logo: this.downloadUrl, sector: this.s
     } as startup
 
     ).subscribe(_ => this.router.navigate(['admin/']))
   }
 
-
+  
 
   upload(event: Event) {
 
@@ -117,4 +125,12 @@ export class EditStartupComponent {
     });
   }
 
+  // selectedSector(){
+  //   this.toSelect = this.sectors.find(this.s);
+  //   console.log(this.toSelect)
+  // }
+
+  selected(event: any){
+  this.s = event.target.text
+  }
 }

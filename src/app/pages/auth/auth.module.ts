@@ -9,6 +9,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
+
+
 @NgModule({
     declarations: [
         LoginComponent,
@@ -20,7 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         MaterialModule,
         FormsModule,
         ReactiveFormsModule,
-    
+        
     ]
 })
 export class AuthModule { }

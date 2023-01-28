@@ -1,0 +1,22 @@
+<mat-card class="container"></mat-card>
+<div mat-dialog-content>
+
+    <mat-card-content>
+        <pre>  <h2> <b>From:     {{message?.name}}</b> </h2></pre>
+    </mat-card-content>
+
+    <mat-card-content>
+        <h2 class="comment"> {{message?.comment}} </h2>
+    </mat-card-content>
+
+    <div class="reply">
+
+        <a href="mailto:{{message?.email}}">{{message?.email}}</a>
+        <a href="tel:{{message?.phone}}">{{message?.phone}}</a>
+
+    </div>
+
+    <div mat-dialog-actions class="buttons">
+        <button mat-button mat-dialog-close cdkFocusInitial>Close</button>
+        <button mat-flat-button color="warn" (click)="delete()">Delete</button>
+    </div>
