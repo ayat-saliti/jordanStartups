@@ -27,8 +27,12 @@ export class DashboardComponent implements OnInit {
 
 
   dataSource!: MatTableDataSource<any>;
-  constructor(private startupService: StartupServiceService, private dialog:MatDialog, private router:Router) { }
-  ngOnInit(): void {
+  constructor(
+    private startupService: StartupServiceService,
+     private dialog:MatDialog,
+      private router:Router) { }
+  
+      ngOnInit(): void {
     this.getStartups();
   }
 

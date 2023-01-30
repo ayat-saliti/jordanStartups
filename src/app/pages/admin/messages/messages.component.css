@@ -1,38 +1,35 @@
 
 .container1{
-    
-    background: url(/assets/white\ background.jpg) no-repeat;
-    background-size:cover;
-    background-position: center;
-    position: relative;
-    height: 100%;
+    height: 90%;
     width: 100%;
-    padding: 0;
-    margin: 0;
+    padding-bottom: 10%;
 }
 .mainContainer{
-    width: 80%;
+    width: 70%;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: 1fr;
+    grid-auto-flow:dense;
     column-gap: 5%;
-    grid-auto-rows: 25vh;
+    /* grid-auto-rows: 25vh; */
     margin: 0 auto;
-
-
     }
-
-
 
 mat-card{
     margin: 3%;
-    border-radius:10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
-    cursor: pointer;
+    align-items: flex-start; 
+    /* cursor: pointer; */
     margin-top: 10vh;
-    /* background-image: linear-gradient(white,#dee1e2c9, white); */
     padding: 0 10%;
+}
+mat-card>*{
+    margin: 3%;
+}
 
+.subContainer{
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }

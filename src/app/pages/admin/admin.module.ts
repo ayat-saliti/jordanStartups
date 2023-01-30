@@ -8,14 +8,22 @@ import { EditStartupComponent } from './edit-startup/edit-startup.component';
 import { AddStartupComponent } from './add-startup/add-startup.component';
 import { AddSectorComponent } from './add-sector/add-sector.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {AngularFireStorageModule}from '@angular/fire/compat/storage';
-import {MatSelectModule} from '@angular/material/select';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { MatSelectModule } from '@angular/material/select';
 import { MessagesComponent } from './messages/messages.component';
-import { MessageDetailsComponent } from './message-details/message-details.component';
+import { DeleteMessagesComponent } from './delete-messages/delete-messages.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, DeleteStartupComponent, EditStartupComponent, AddStartupComponent, AddSectorComponent, MessagesComponent, MessageDetailsComponent],
+  declarations: [DashboardComponent,
+    DeleteStartupComponent,
+    EditStartupComponent,
+    AddStartupComponent,
+    AddSectorComponent,
+    MessagesComponent,
+    DeleteMessagesComponent
+
+  ],
   imports: [
     CommonModule,
     AdminRoutingModule,

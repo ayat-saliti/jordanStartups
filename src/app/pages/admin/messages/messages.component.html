@@ -1,13 +1,24 @@
 <div class="container1">
 
-<div class="mainContainer" >
+    <div class="mainContainer">
 
-    <mat-card *ngFor="let comment of comments"  (click)="showMessage(comment.id)">
+        <mat-card *ngFor="let comment of comments">
+            <mat-card-header>
+                <mat-card-title>{{comment.name | uppercase}}</mat-card-title>
+                <mat-card-subtitle>
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p>{{comment.comment}}</p>
+            </mat-card-content>
+            <div>
 
-        <mat-card-content>
-           <h2> <b>{{comment.name}}</b> </h2>
-        </mat-card-content>
-    
-    </mat-card>
+            </div>
+            <mat-card-actions class="subContainer">
+                <pre><a href="tel:{{comment.phone}}"><b>CALL</b></a></pre>
+                <pre><a href="mailto:{{comment.email}}"><b>REPLY</b></a></pre>
+                <button mat-button (click)="deletemessage(comment.id)">DELETE </button>
+            </mat-card-actions>
+        </mat-card>
     </div>
 </div>
