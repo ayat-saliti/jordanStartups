@@ -23,6 +23,7 @@ export class AddStartupComponent implements OnInit {
     yearOfEstablishment: [''],
     email: ['', [Validators.required, Validators.email]],
     website: ['', [Validators.required]],
+    about:''
   });
 
   constructor(private fb: FormBuilder, private auth: StartupServiceService, private router: Router, private storage: FireStorageService) {
