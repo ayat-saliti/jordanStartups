@@ -1,5 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 .container1 {
-
     background: url(/assets/background.jpg) no-repeat;
     height: 100vh;
     background-size:cover;

@@ -13,6 +13,7 @@ const routes: Routes =[
   {path:'addStartup',component:AddStartupComponent},
   {path: 'editStartup/:id', component: EditStartupComponent},
   {path: 'messages', component: MessagesComponent},
+
   
   
 ];
