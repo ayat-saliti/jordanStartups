@@ -28,4 +28,10 @@ export class AuthService {
     });
   }
 
+  signOut(){
+    return this.fireAuth.signOut().then(()=> {
+      window.alert('Logged out!')
+    })
+  }
+
 }

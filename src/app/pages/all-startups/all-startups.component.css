@@ -28,16 +28,10 @@ mat-card{
     padding: 0 10%;
 
 }
-/* ##c4dbf5 */
-
 
 img{
     width: 90%;
 }
-
-/* h2{
-    text-align: center;
-} */
 
 @media screen and (max-width: 800px) {
    .mainContainer{

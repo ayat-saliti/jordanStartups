@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { StartupServiceService } from 'src/app/lib/services/startup-service.service';
 import { AddSectorComponent } from '../add-sector/add-sector.component';
+import { CompanyInfoComponent } from '../company-info/company-info.component';
 import { DeleteStartupComponent } from '../delete-startup/delete-startup.component';
 
 @Component({
@@ -40,7 +41,6 @@ export class DashboardComponent implements OnInit {
     this.startupService.getStartup().subscribe((response) => {
 
       this.dataSource = new MatTableDataSource(response);
-
     });
   }
   applyFilter(event: Event) {
@@ -59,6 +59,16 @@ export class DashboardComponent implements OnInit {
     })
   }
 
+  companyInfo(id: string){
+    let dialogRef = this.dialog.open(CompanyInfoComponent,{
+      width: "50%",
+      data: {id: id},
+
+    });
+    dialogRef.afterClosed().subscribe((result)=>{
+      this.getStartups()
+    })
+  }
 
   
 }

@@ -40,7 +40,6 @@
     <mat-form-field>
         <mat-label>Admin Key</mat-label>
         <input placeholder="adminKey" matInput type="password" formControlName="adminKey" >
-        <!-- <mat-error *ngIf="adminKey?.hasError('adminKeyValidator')">Admin Key is required ... This permission only for admin</mat-error> -->
         <mat-error *ngIf="adminKey?.hasError('required')">AdminKey is required</mat-error>
     </mat-form-field>
 

@@ -12,6 +12,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { MatSelectModule } from '@angular/material/select';
 import { MessagesComponent } from './messages/messages.component';
 import { DeleteMessagesComponent } from './delete-messages/delete-messages.component';
+import { CompanyInfoComponent } from './company-info/company-info.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { DeleteMessagesComponent } from './delete-messages/delete-messages.compo
     AddStartupComponent,
     AddSectorComponent,
     MessagesComponent,
-    DeleteMessagesComponent
+    DeleteMessagesComponent,
+    CompanyInfoComponent
 
   ],
   imports: [

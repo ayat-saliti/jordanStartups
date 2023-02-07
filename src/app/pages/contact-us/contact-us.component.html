@@ -3,15 +3,7 @@
 <div class="mainContainer">
 
 
-    <div class="container1">
-        <pre><h2><b>E-mail:  </b><a href="mailto:ayat_slaity@yahoo.com">E-mail/ayat_Slaity</a></h2></pre>
-        <pre><h2><b>GitHub:  </b><a href="https://github.com/ayat-saliti">GitHub/ayat-saliti</a></h2></pre>
-        <pre><h2><b>LinkedIn:  </b><a href="https://linkedin.com/in/ayat-slaity">LinkedIn/ayat-Slaity</a></h2></pre>
-        <pre><h2><b>Phone number:   </b><a href="tel:+962797329470">+962797329470</a></h2></pre>
-        <br><br>
-        <button mat-raised-button color="primary" [routerLink]="['/allStartups']">Back to home page</button>
-
-    </div>
+   
 
 
     <div class="container2">
@@ -36,13 +28,6 @@
                 <mat-error *ngIf="email?.hasError('email')">Email format is incorrect</mat-error>
             </mat-form-field>
 
-            <!-- <mat-form-field>
-                <mat-label>Comment</mat-label>
-                <input placeholder="Input you comment here please" matInput type="textarea" formControlName="comment">
-                <mat-error *ngIf="comment?.hasError('required')">Comment is required</mat-error>
-                
-            </mat-form-field> -->
-
             <mat-form-field >
                 <mat-label>Comment</mat-label>
                 <textarea matInput rows="5" cols="40" placeholder="text" formControlName="comment"></textarea>
@@ -53,7 +38,15 @@
 
         </form>
     </div>
-  
+    
+    <div class="container1">
+        <pre><h2><b>E-mail:  </b><a href="mailto:ayat_slaity@yahoo.com">E-mail/ayat_Slaity</a></h2></pre>
+        <pre><h2><b>GitHub:  </b><a href="https://github.com/ayat-saliti">GitHub/ayat-saliti</a></h2></pre>
+        <pre><h2><b>LinkedIn:  </b><a href="https://linkedin.com/in/ayat-slaity">LinkedIn/ayat-Slaity</a></h2></pre>
+        <pre><h2><b>Phone number:   </b><a href="tel:+962797329470">+962797329470</a></h2></pre>
+        <br><br>
+        <button mat-raised-button color="primary" [routerLink]="['/allStartups']">Back to home page</button>
+    </div>
 
    
 </div>

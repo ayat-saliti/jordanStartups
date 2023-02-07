@@ -12,15 +12,6 @@
         <div>
             <mat-form-field appearance="fill">
                 <mat-label>Sector</mat-label>
-
-                <!-- <mat-select class="selectSector" formControlName="sector" >
-                    <mat-option [value]="startup?.sector"></mat-option>
-                     <mat-option *ngFor="let sector of sectors"  selected="startup?.sector" >
-                     {{sector.sector}}
-                    </mat-option>
-                 </mat-select> -->
-
-
                 <mat-select name="sector" formControlName="sector" >                
                      <mat-option *ngFor="let sector of sectors " 
                      (change)="selected($event)"

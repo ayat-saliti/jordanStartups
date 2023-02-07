@@ -14,7 +14,6 @@
     width: 90%;
     height: 81vh;
     background-size: cover;
-    /* background-position: center center; */
 }
 
 .paragraph {
@@ -30,10 +29,6 @@
 button {
     margin-top: 20%;
 }
-
-
-
-
 
 
 @media screen and (max-width: 1310px) {

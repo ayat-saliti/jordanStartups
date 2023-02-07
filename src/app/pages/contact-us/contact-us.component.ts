@@ -42,13 +42,7 @@ submit(){
   //new comment(in firebase)
   this.auth.addComment({ 
     ...this.form.value
-  } as contact
-    
-    // this.name?.value + '',
-    // this.phone?.value + '',
-    // this.email?.value + '',
-    // this.comment?.value + ''
-  
+  } as contact  
   ).subscribe(_ => window.location.reload())
 
 }

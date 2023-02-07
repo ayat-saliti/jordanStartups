@@ -53,20 +53,10 @@ export class AddStartupComponent implements OnInit {
     return this.form.get('yearOfEstablishment');
   }
   submit() {
-    //new comment(in firebase)
     this.auth.addStartup({
       ...this.form.value, logo: this.downloadUrl, sector: this.sector
     } as startup
-
-      // this.name?.value + '',
-      // this.phone?.value + '',
-      // this.email?.value + '',
-      // this.comment?.value + ''
-
     ).subscribe(_ => window.location.reload())
-
-    // this.router.navigate(['/admin'])
-
   }
 
 

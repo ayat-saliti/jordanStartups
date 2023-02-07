@@ -6,6 +6,7 @@ import { AddStartupComponent } from './add-startup/add-startup.component';
 import { AdminLayoutComponent } from 'src/app/lib/layout/admin-layout/admin-layout.component';
 import { EditStartupComponent } from './edit-startup/edit-startup.component';
 import { MessagesComponent } from './messages/messages.component';
+import { CompanyInfoComponent } from './company-info/company-info.component';
 
 
 const routes: Routes =[
@@ -13,7 +14,6 @@ const routes: Routes =[
   {path:'addStartup',component:AddStartupComponent},
   {path: 'editStartup/:id', component: EditStartupComponent},
   {path: 'messages', component: MessagesComponent},
-
   
   
 ];

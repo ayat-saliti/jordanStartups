@@ -4,20 +4,16 @@
 }
 
 .mainContainer {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    /* width: 50%; */
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 
 .container1 {
-   /* border: 1px solid black; */
     margin: 0 auto;
     width: 25%;
-    margin-top: 30%;
-    padding-left: 20%;
-    
+    padding-left: 40%;
 }
 
 .container2 {
@@ -32,7 +28,7 @@
 }
 
 .container1>button{
-    left: 14%;
+    left: 5%;
 }
 
 @media screen and (max-width: 960px) {
@@ -40,12 +36,15 @@
         padding: 0;
         margin: 0;
     }
-    .mainContainer {
-        display: flex;
-        flex-direction: column-reverse;
-        margin: 0 auto;
+    .mainContainer{
+        width: 100%;
     }
+    .container1 {
+        padding-left: 20%;
+    }
+
     .container2>form>*, .container1 {
-        width: 90%;
+        width: 100%;
+        margin: 0 auto;
     }
     }

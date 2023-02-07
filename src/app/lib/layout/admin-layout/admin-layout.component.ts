@@ -28,7 +28,6 @@ constructor(private changeDetectorRef: ChangeDetectorRef,
 
     this.mobileQuery = this.media.matchMedia('(max-width: 1000px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
-    // tslint:disable-next-line: deprecation
     this.mobileQuery.addListener(this._mobileQueryListener);
 }
 ngOnInit(): void {
@@ -49,5 +48,9 @@ getUserName(){
     this.userName = value
   console.log(value)
   })
+  }
+
+  logOut(){
+    this.authSevice.signOut()
   }
 }

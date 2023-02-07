@@ -50,13 +50,6 @@ export class RegisterComponent {
   }
 
 submit(){
-//   this.admin = this.adminKey?.value;
-//   var x = this.form.get('adminKey');
-//   if(this.admin != 'admin2468'){
-//   //new user registration(in firebase)
-//   this.router.navigate(['register/'])
-// }
-// else {
   this.auth.signUp(
     this.name?.value + '',
     this.phone?.value + '',

@@ -18,39 +18,40 @@
   
         <mat-nav-list>
           <h2 mat-subheader *ngFor="let user of userName"> WELCOME {{user.name | uppercase}}</h2>
-  
           <a mat-list-item class="mat-list-item-container" [routerLink]="['addStartup']" routerLinkActive="active" >
             <div class="menu-element">
-                  <p mat-line> Add new startup </p>
+              <mat-icon >add_circle_outline</mat-icon>
+                  <p mat-line>new startup </p>
             </div>
           </a>
 
           <a mat-list-item class="mat-list-item-container" (click)="addSector()" routerLinkActive="active" >
             <div class="menu-element">
-                  <p mat-line> Add new sector </p>
+              <mat-icon >add_circle_outline</mat-icon>
+                  <p mat-line>new sector </p>
             </div>
           </a>
 
           <a mat-list-item class="mat-list-item-container" [routerLink]="['messages']" routerLinkActive="active" >
             <div class="menu-element">
+              <mat-icon>mail</mat-icon>
                   <p mat-line> Users messages </p>
             </div>
           </a>
 
           <a mat-list-item class="mat-list-item-container" [routerLink]="(['/allStartups'])" routerLinkActive="active" >
             <div class="menu-element">
+              <mat-icon >home</mat-icon>
                   <p mat-line> Home page </p>
             </div>
           </a>
 
-
-<!--   
-          <a mat-list-item [routerLink]="['/home']">
-            <div class="menu-element">
-            <mat-icon mat-list-icon>exit_to_app</mat-icon>
+          <a mat-list-item [routerLink]="['/allStartups']">
+            <div class="menu-element" (click)="logOut()">
+            <mat-icon>exit_to_app</mat-icon>
             <p mat-line> Log out </p>
             </div>
-          </a> -->
+          </a>
   
   
         </mat-nav-list>

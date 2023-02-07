@@ -13,8 +13,6 @@
             <mat-form-field appearance="fill">
                 <mat-label>Sector</mat-label>
                 <mat-select name="sector">
-
-                    <!-- | ascendingOrder: 'sector' -->
                     <mat-option *ngFor="let sector of sectors " [value]="sector.sector"
                         (click)="addingSector(sector.sector)">
                         {{sector.sector}}
