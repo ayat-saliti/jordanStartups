@@ -33,7 +33,6 @@ submit(){
     //navigate to admin/
     this.router.navigate(['admin/']);
 
-    console.log(user);
   }).catch((error)=> {
     console.log(error)
   });

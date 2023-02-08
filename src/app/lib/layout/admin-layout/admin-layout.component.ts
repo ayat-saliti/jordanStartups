@@ -30,9 +30,7 @@ constructor(private changeDetectorRef: ChangeDetectorRef,
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
 }
-ngOnInit(): void {
-this.getUserName()
-}
+
 ngAfterViewInit(): void {
   this.changeDetectorRef.detectChanges();
 }
@@ -43,12 +41,6 @@ addSector(){
   });
 }
 
-getUserName(){
-  this.userService.getUser().subscribe((value)=>{
-    this.userName = value
-  console.log(value)
-  })
-  }
 
   logOut(){
     this.authSevice.signOut()

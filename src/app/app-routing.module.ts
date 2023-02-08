@@ -10,6 +10,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { StartupsDetailsComponent } from './pages/startups-details/startups-details.component';
 
+
 const routes: Routes = [
   {path:'', component: HomeComponent, pathMatch: 'full'},
   

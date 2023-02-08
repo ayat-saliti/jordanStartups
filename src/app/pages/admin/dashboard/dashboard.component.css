@@ -21,17 +21,16 @@ table {
     margin: 0 auto;
   }
 
- 
   img{
     width: 70px;
+    max-height: 50px;
   }
 
-  .about{
-    max-height: 10vh; 
-    display: flex;
-    overflow:auto;
-}
-
+  .subContainer{
+    display: inline-flex;
+    height:inherit;
+    align-items: center;
+  }
 
 
 

@@ -58,7 +58,6 @@ submit(){
   ).then((user)=>{
       //navigate to dashboard(admin)
       this.router.navigate(['admin/']);
-      console.log(user);
     }).catch((error)=> {
       console.log(error)
   });

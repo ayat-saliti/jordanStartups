@@ -8,9 +8,6 @@ import { AuthService } from './lib/services/auth/auth.service';
 })
 export class AppComponent {
   constructor(public authService:AuthService){}
-  title = 'jordanStartups';
 
-  navigateToLogin(){
-    
-  }
+
 }

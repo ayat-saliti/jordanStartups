@@ -17,7 +17,7 @@
         [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" class="sidenav">
   
         <mat-nav-list>
-          <h2 mat-subheader *ngFor="let user of userName"> WELCOME {{user.name | uppercase}}</h2>
+          <h2> WELCOME </h2>
           <a mat-list-item class="mat-list-item-container" [routerLink]="['addStartup']" routerLinkActive="active" >
             <div class="menu-element">
               <mat-icon >add_circle_outline</mat-icon>

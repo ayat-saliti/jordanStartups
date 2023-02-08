@@ -21,9 +21,7 @@ export class DashboardComponent implements OnInit {
     'Website',
     'email',
     'phone number',
-    'about',
-    'edit',
-    'delete'
+    'more',
   ];
 
 
@@ -41,6 +39,7 @@ export class DashboardComponent implements OnInit {
     this.startupService.getStartup().subscribe((response) => {
 
       this.dataSource = new MatTableDataSource(response);
+
     });
   }
   applyFilter(event: Event) {
@@ -63,8 +62,9 @@ export class DashboardComponent implements OnInit {
     let dialogRef = this.dialog.open(CompanyInfoComponent,{
       width: "50%",
       data: {id: id},
-
+      
     });
+
     dialogRef.afterClosed().subscribe((result)=>{
       this.getStartups()
     })

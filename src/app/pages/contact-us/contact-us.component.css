@@ -29,6 +29,7 @@
 
 .container1>button{
     left: 5%;
+    padding: 1%;
 }
 
 @media screen and (max-width: 960px) {

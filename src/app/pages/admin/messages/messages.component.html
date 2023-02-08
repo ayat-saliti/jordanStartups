@@ -15,9 +15,9 @@
 
             </div>
             <mat-card-actions class="subContainer">
-                <pre><a href="tel:{{comment.phone}}"><b>CALL</b></a></pre>
-                <pre><a href="mailto:{{comment.email}}"><b>REPLY</b></a></pre>
-                <button mat-button (click)="deletemessage(comment.id)">DELETE </button>
+                <a href="tel:{{comment.phone}}"> <mat-icon> call</mat-icon></a>
+                <a href="mailto:{{comment.email}}"><mat-icon>mail</mat-icon></a>
+                <mat-icon  (click)="deletemessage(comment.id)">delete</mat-icon>
             </mat-card-actions>
         </mat-card>
     </div>

@@ -11,7 +11,7 @@ nav {
     justify-items: flex-end;
     justify-content: space-between;
     height: 10vh;
-    width: 100vw;
+    width: 100%;
 }
 
 div{
@@ -24,7 +24,7 @@ img{
 }
 
 nav > * , button {
-    margin-top: 1%;
+    margin: 1%;
 }
 
 @media screen and (max-width: 960px) {
